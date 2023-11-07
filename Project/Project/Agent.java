@@ -38,7 +38,8 @@ public class Agent {
     }
     public static void BUILD2()
     {
-
+        startBudget -= Town.getPriceBUILD2() +Town.getFoodUseBUILD2() * Resources.getUnitPriceFood() + Town.getMaterialsUseBUILD2()* Resources.getUnitPriceMaterials()  + Town.getEnergyUseBUILD2()* Resources.getUnitPriceEnegry();
+        Town.setProsperity(Town.getProsperity() + Town.getProsperityBUILD2());
     }
     public static void main(String[] args) {
         RequestFood(50, 2);

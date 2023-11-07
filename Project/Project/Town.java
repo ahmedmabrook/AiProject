@@ -54,9 +54,10 @@ public class Town {
     }
 
     // Setter method for prosperity
-    public static void setProsperity(int prosperity) {
-        prosperity = prosperity;
-    }
+   public static void setProsperity(int prosperity)
+   {
+       Town.prosperity = prosperity;
+   }
     public static int getPriceBuild1() {
         return priceBuild1;
     }
