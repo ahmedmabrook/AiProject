@@ -7,9 +7,9 @@ public class LLAPSearch extends GenericSearch{
 
         setLLAPInitialState(initialState);
         Operators.parse(initialState);
-        Operators.RequestFood();
-        Operators.RequestMaterials();
-        Operators.RequestEnergy();
+        // Operators.RequestFood();
+        // Operators.RequestMaterials();
+        // Operators.RequestEnergy();
         if(strategy.equals("BFS")){
             BFS.BFSFunction();
         }
@@ -20,7 +20,7 @@ public class LLAPSearch extends GenericSearch{
 
 
 
-    
+
     public static String getLLAPInitialState() {
         return initialState;
     }

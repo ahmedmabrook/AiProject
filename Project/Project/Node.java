@@ -1,25 +1,25 @@
 public class Node {
-    private static int state;
-    private static Node parent;
-    private static String operator;
-    private static int depth;
-    private static int pathCost;
+    private  State states;
+    private  Node parent;
+    private  String operator;
+    private  int depth;
+    private  int pathCost;
 
-    public Node(int state, Node parent, String operator, int depth, int pathCost) {
-        this.state = state;
+    public Node(State states, Node parent, String operator, int depth, int pathCost) {
+        this.states = states;
         this.parent = parent;
         this.operator = operator;
         this.depth = depth;
         this.pathCost = pathCost;
     }
     // Getter for 'state'
-    public int getState() {
-        return state;
+    public State getState() {
+        return states;
     }
 
     // Setter for 'state'
-    public void setState(int state) {
-        this.state = state;
+    public void setState(State states) {
+        this.states = states;
     }
 
     // Getter for 'parent'
@@ -43,8 +43,8 @@ public class Node {
     }
 
     // Getter for 'depth'
-    public int getDepth() {
-        return depth;
+    public  int getDepth() {
+        return this.depth;
     }
 
     // Setter for 'depth'
@@ -62,8 +62,8 @@ public class Node {
         this.pathCost = pathCost;
     }
    
-    public static String printNodeAsString() {
-        return "State: " + state + ", Parent: " + parent + ", Operator: " + operator + ", Depth: " + depth + ", Path Cost: " + pathCost;
+    public  String printNodeAsString() {
+        return " energy: " + this.states.getEnergy() +" prosperity: " + this.states.getProsperity() +" materials: " + this.states.getMaterials() +" food: " + this.states.getFood() + ", Parent: " + this.parent + ", Operator: " + this.operator + ", Depth: " + this.depth + ", Path Cost: " + this.pathCost;
     }
     // Node node = new Node("some state", null, "some operator", 0, 10);
     // // Using getter methods to access values

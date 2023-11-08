@@ -1,8 +1,10 @@
 public class Operators {
+
     static int initialProsperity;
     static int initialFood;
     static int initialMaterials ;
     static int initialEnergy ;
+
     static int unitPriceFood ;
     static int unitPriceMaterials ;
     static int unitPriceEnergy ;
@@ -22,7 +24,6 @@ public class Operators {
     static int materialsUseBUILD2 ;
     static int energyUseBUILD2 ;
     static int prosperityBUILD2 ;
-
     private static int startBudget = 100000;
     private static boolean request = false;
     public static int delay1 = 0;
@@ -79,30 +80,52 @@ public class Operators {
 
 
 
-    public static void RequestFood()
+    public static void RequestFood(Node node)
     {
-            System.out.println(startBudget);
+            // System.out.println(startBudget);
+            // initialFood--;
+            // initialMaterials--;
+            // initialEnergy--;
             startBudget -= unitPriceFood + unitPriceEnergy + unitPriceMaterials;
-            System.out.println(startBudget);
+            node.getState().setEnergy(node.getState().getEnergy()-1);
+            node.getState().setFood(node.getState().getFood()-1);
+            node.getState().setMaterials(node.getState().getMaterials()-1);
+            node.getState().setProsperity(node.getState().getProsperity()-1);
+
+
     }
-    public static void RequestMaterials()
+    public static void RequestMaterials(Node node)
     {
+            // initialFood--;
+            // initialEnergy--;
+            // initialMaterials--;
             startBudget -= unitPriceFood + unitPriceEnergy + unitPriceMaterials;
-            System.out.println(startBudget);
+            node.getState().setEnergy(node.getState().getEnergy()-1);
+            node.getState().setFood(node.getState().getFood()-1);
+            node.getState().setMaterials(node.getState().getMaterials()-1);
+            node.getState().setProsperity(node.getState().getProsperity()-1);
+            // System.out.println(node.getState().getEnergy());
 
     }
 
-    public static void RequestEnergy()
+    public static void RequestEnergy(Node node)
     {
+            // initialFood--;
+            // initialMaterials--;
+            // initialEnergy--;
             startBudget -= unitPriceFood + unitPriceEnergy + unitPriceMaterials;
-            System.out.println(startBudget);
+            node.getState().setEnergy(node.getState().getEnergy()-1);
+            node.getState().setFood(node.getState().getFood()-1);
+            node.getState().setMaterials(node.getState().getMaterials()-1);
+            node.getState().setProsperity(node.getState().getProsperity()-1);
+            // System.out.println(startBudget);
 
     }
 
     public static void WAIT()
     {
-            startBudget -= unitPriceFood + unitPriceEnergy + unitPriceMaterials;
-            System.out.println(startBudget);
+            // startBudget -= unitPriceFood + unitPriceEnergy + unitPriceMaterials;
+            // System.out.println(startBudget);
 
         // if (request == true){
         //     startBudget -= Resources.getUnitPriceFood() + Resources.getUnitPriceEnegry() + Resources.getUnitPriceMaterials();
@@ -111,15 +134,15 @@ public class Operators {
         // }
     }
 
-    public static void BUILD1(int priceBuildOne)
+    public static void BUILD1()
     {
-        startBudget -= priceBuildOne +foodUseBUILD1 * unitPriceFood + materialsUseBUILD1* unitPriceMaterials  + energyUseBUILD1* unitPriceEnergy;
-        initialProsperity += prosperityBUILD1;
+        // startBudget -= priceBUILD1 +foodUseBUILD1 * unitPriceFood + materialsUseBUILD1* unitPriceMaterials  + energyUseBUILD1* unitPriceEnergy;
+        // initialProsperity += prosperityBUILD1;
     }
     public static void BUILD2()
     {
-        startBudget -= priceBUILD2 +foodUseBUILD2 * unitPriceFood + materialsUseBUILD2* unitPriceMaterials  + energyUseBUILD2* unitPriceEnergy;
-        initialProsperity += prosperityBUILD2;
+        // startBudget -= priceBUILD2 +foodUseBUILD2 * unitPriceFood + materialsUseBUILD2* unitPriceMaterials  + energyUseBUILD2* unitPriceEnergy;
+        // initialProsperity += prosperityBUILD2;
     }
     public static int getStartBudget() {
         return startBudget;
@@ -127,14 +150,6 @@ public class Operators {
 
     public static void setStartBudget(int startBudget) {
         Operators.startBudget = startBudget;
-    }
-    public static int getInitialProsperity() {
-        return initialProsperity;
-    }
-
-    // Setter for 'initialProsperity'
-    public static void setInitialProsperity(int prosperity) {
-        initialProsperity = prosperity;
     }
     public static void main(String[] args) {
         System.out.println(LLAPSearch.getLLAPInitialState());
