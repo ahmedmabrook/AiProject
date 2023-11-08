@@ -1,12 +1,16 @@
 public class Agent {
     private static int startBudget = 100000;
     private static boolean request = false;
-
+    public static int delay1 = 0;
     public static void RequestFood(int amount, int delay)
     {
+            delay1 = delay;
             request = true;
-            startBudget -= Resources.getUnitPriceFood() + Resources.getUnitPriceEnegry() + Resources.getUnitPriceMaterials();
-            
+            if(delay!=0){
+                 startBudget -= Resources.getUnitPriceFood() + Resources.getUnitPriceEnegry() + Resources.getUnitPriceMaterials();
+            }else{
+                
+            }
     }
     public static void RequestMaterials(int amount, int delay)
     {
